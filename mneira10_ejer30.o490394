@@ -1,0 +1,17 @@
+g++ -fopenmp adveccionSerial.cpp -o adveccionSerial.x -std=c++11
+./adveccionSerial.x
+80
+79 2 0.025 
+g++ -fopenmp adveccionParallel.cpp -o adveccionParallel.x -std=c++11
+./adveccionParallel.x
+80
+79 2 0.025 
+python3 graph.py
+gcc walkSerial.c -o serial.x 
+gcc -fopenmp walkParallel.c -o parallel.x 
+./parallel.x > parallel.dat
+./serial.x > serial.dat
+python graph.py
+
+
+(hpcstats) Getting modules
